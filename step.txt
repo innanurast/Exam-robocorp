@@ -1,0 +1,38 @@
+- training
+read data csv
+data csv to dataframe - export to excel
+- employee
+read data excel
+if students, jika status active dan category employee
+berdasarkan id
+if date training kurang dari seminggu dari tgl sekarang maka send reminder
+
+hasil dari kedua send kirim email ke masing masing students
+
+        # if matching_trainings is not None and not matching_trainings.empty:
+        #     # Use iter_dicts with with_index=False to get dictionaries without index
+        #     for training in matching_trainings.iter_dicts(with_index=False):
+        #         print(f"Matching training data found for student ID {student_id}")
+        #         # training_name = training.get("Training name", "")
+        #         # print(f"training_name {training_name}: ")
+        #         # training_date_str = training.get("Date training", "")
+                
+        #         # Convert training date string to datetime object
+        #         # training_date = datetime.strptime(training_date_str, "%Y-%m-%d")
+
+        #         # Check if training date is less than 5 days from the current date
+        #         # if current_date < training_date < current_date + timedelta(days=5):
+        #         #     Send a reminder email
+        #         #     name = f"{student['First Name']} {student['Last Name']}"
+        #         #     recipient = student["Email"]
+        #         #     subject = "Remember to complete your training!"
+        #         #     body = (
+        #         #         f"Hi, {name}! "
+        #         #         f"Don't forget your upcoming training: {training_name} on {training_date_str}"
+        #         #     )
+        #         #     emailer.send_email(recipient, subject, body)
+
+        # else:
+        #     print(f"No matching training data found for student ID {student_id}")
+
+# def send_email_reminder(student, training_name, training_date_str):

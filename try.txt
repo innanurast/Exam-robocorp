@@ -1,0 +1,51 @@
+    # # Iterate through active students
+    # for student in active_students.get_table():
+    #     student_id = student["Person ID"]
+        
+    #     # Find matching training data for the student ID
+    #     matching_trainings = tables.filter_table_by_column(
+    #         trainings, "Person ID", "==", student_id
+    #     )
+    #     print(matching_trainings)
+        # if matching_trainings is not None:
+        #     matching_trainings = matching_trainings.get_table()
+        #     print(f"Training data for student ID {student_id}:")
+        #     for training in matching_trainings:
+        #         training_name = training.get("Training Name", "")
+        #         training_date = training.get("Training Date", "")
+        #         print(f"  Training Name: {training_name}, Training Date: {training_date}")
+        # else:
+        #     print(f"No matching training data found for student ID {student_id}")
+
+
+
+
+    trainings_copy = tables.copy_table(trainings)
+    tables.filter_table_by_column(
+        trainings_copy, "Person ID", "==", active_students[0])
+    print(tr)
+
+
+
+            msg = f"""
+            <!doctype html>
+                <html>
+                <head>
+                    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                </head>
+                <body style="font-family: sans-serif;">
+                    <div style="display: block; margin: auto; max-width: 600px;" class="main">
+                    <h1 style="font-size: 18px; font-weight: bold; margin-top: 20px">
+                        Hi, {person_name}!\n\n Don't forget your upcoming training:\n\n
+                    </h1>
+                    <p>Inspect it using the tabs you see above and learn how this email can be improved.</p>
+                    <h1>Detil Trainings</h>
+                    {html_table}
+                    <p>Now send your email using our fake SMTP server and integration of your choice!</p>
+                    <p>Good luck! Hope it works.</p>
+                    </div>
+                </body>
+                </html>
+                """
+            body = MIMEMultipart()
+            body.attach(MIMEText(msg, "html"))
